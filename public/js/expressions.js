@@ -8,7 +8,7 @@ const detect = async () => {
     .detectAllFaces(video)
     .withFaceLandmarks()
     .withFaceExpressions();
-  if (result) {
+  if (result && result.length > 0) {
     const dims = faceapi.matchDimensions(overlay, video, true);
     const resizedResults = faceapi.resizeResults(result, dims);
     faceapi.draw.drawDetections(overlay, resizedResults);

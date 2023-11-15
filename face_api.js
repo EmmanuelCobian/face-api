@@ -22,4 +22,5 @@ wss.on("connection", (ws, req) => {
 
 app.listen(8080, () => {
   maxAPI.post("Server started at http://localhost:8080")
+  console.log("hi")
 });
