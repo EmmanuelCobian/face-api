@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#video-wrapper {
+    position: relative;
+    width: 75%;
+    height: auto;
+}
+
+video, canvas {
+    max-width: 100%;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
