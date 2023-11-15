@@ -6,10 +6,6 @@ const http = require("http");
 const app = express();
 const publicDir = path.join(__dirname, "public");
 
-const log = () => {
-  console.log(...arguments);
-  maxAPI.post(...arguments);
-};
 
 app.use(express.static(publicDir));
 app.get("/", (req, res) => {
@@ -20,11 +16,10 @@ const server = http.createServer(app);
 const wss = new WebSocket.Server({ port: 7474 });
 wss.on("connection", (ws, req) => {
   ws.on("message", (message) => {
-    // log(message)
     maxAPI.outlet(JSON.parse(message));
   });
 });
 
 app.listen(8080, () => {
-  log("Server started at http://localhost:8080");
+  maxAPI.post("Server started at http://localhost:8080")
 });

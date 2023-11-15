@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 487.0, 238.0, 969.0, 480.0 ],
+		"rect" : [ 487.0, 238.0, 567.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -100,7 +100,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 204.0, 177.0, 731.0, 371.0 ],
+					"patching_rect" : [ 341.0, 60.0, 517.0, 403.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -140,8 +140,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
