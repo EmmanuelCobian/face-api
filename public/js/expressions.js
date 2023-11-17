@@ -3,18 +3,26 @@ const video = document.querySelector("#video");
 const overlay = document.querySelector("#overlay");
 const ws = new WebSocket("ws://localhost:7474");
 
+const arrToDict = (arr) => {
+  let result = {}
+  arr.forEach((val, index) => {
+    result[index] = val.expressions
+  })
+  return result
+}
+
 const detect = async () => {
-  const result = await faceapi
+  const results = await faceapi
     .detectAllFaces(video)
     .withFaceLandmarks()
     .withFaceExpressions();
-  if (result && result.length > 0) {
+  if (results && results.length > 0) {
     const dims = faceapi.matchDimensions(overlay, video, true);
-    const resizedResults = faceapi.resizeResults(result, dims);
+    const resizedResults = faceapi.resizeResults(results, dims);
     faceapi.draw.drawDetections(overlay, resizedResults);
-    faceapi.draw.drawFaceLandmarks(overlay, resizedResults);
     faceapi.draw.drawFaceExpressions(overlay, resizedResults, 0.05);
-    ws.send(JSON.stringify(result[0].expressions));
+    allExpressions = arrToDict(results)
+    ws.send(JSON.stringify(allExpressions));
   }
   requestAnimationFrame(detect);
 };
