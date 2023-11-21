@@ -11,7 +11,7 @@ function getRandomExpression() {
 function changeText() {
     // check if an interval has already been set up
     if (!nIntervId) {
-      nIntervId = setInterval(getRandomExpression, 1000);
+      nIntervId = setInterval(getRandomExpression, 5000);
     }
   }
 
