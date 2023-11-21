@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Face-api</title>
     <link rel="stylesheet" href="/style.css">
+    <script src="js/face-api.min.js"></script>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
+    <button id="button">Click to change expression</button>
+    <h3 id="expression">Happy</h3>
     <div id="video-wrapper">
         <video id="video" autoplay muted playsinline></video>
         <canvas id="overlay"></canvas>
     </div>
-    <script src="js/face-api.min.js"></script>
     <script src="js/expressions.js"></script>
 </body>
 </html>
