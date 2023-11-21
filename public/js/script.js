@@ -4,7 +4,8 @@ const expressions = ["neutral", "happy", "sad", "angry", "fearful", "disgusted",
 
 
 function getRandomExpression() {
-    expression.innerHTML = expressions[Math.floor(Math.random() * months.length)];
+    console.log("clicked");
+    expression.innerHTML = expressions[Math.floor(Math.random() * expressions.length)];
 }
 
 button.addEventListener('click', getRandomExpression);
