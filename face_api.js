@@ -19,7 +19,6 @@ wss.on("connection", (ws, req) => {
     maxAPI.outlet(JSON.parse(message));
     wss.clients.forEach((client) => {
       if (client !== ws && client.readyState === WebSocket.OPEN) {
-        console.log('made it to send client message')
         client.send(message)
       }
     })
