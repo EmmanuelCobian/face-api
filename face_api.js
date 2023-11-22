@@ -17,10 +17,16 @@ const wss = new WebSocket.Server({ port: 7474 });
 wss.on("connection", (ws, req) => {
   ws.on("message", (message) => {
     maxAPI.outlet(JSON.parse(message));
+    wss.clients.forEach((client) => {
+      if (client !== ws && client.readyState === WebSocket.OPEN) {
+        console.log('made it to send client message')
+        client.send(message)
+      }
+    })
   });
 });
 
 app.listen(8080, () => {
   maxAPI.post("Server started at http://localhost:8080")
-  console.log("hi")
+  console.log("Server started at http://localhost:8080")
 });
